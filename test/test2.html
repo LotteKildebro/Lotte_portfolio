@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/gif" href="#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+<script>function myFunction(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var imgText = document.getElementById("imgtext");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  imgText.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+  expandImg.parentElement.style.display = "block";
+}
+    </script>
+
+<body>
+<nav role="navigation">
+  <div id="menuToggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" />
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <ul id="menu">
+      <a href="#"><li>Home</li></a>
+      <a href="#"><li>About</li></a>
+      <a href="#"><li>Info</li></a>
+      <a href="#"><li>Contact</li></a>
+      <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+    </ul>
+  </div>
+</nav>
+<main id="wrapper">
+
+<h1>Min nye cykel</h1>
+    
+
+    
+<p>
+    Min nye cykel er en <href a="https://www.raleigh.co.uk/willow-pink-21551-2576">Raleigh Nottingham</href>, der har følgende særlige kendetegn: Den har <b>1 gear</b>, den er <b>lyserød</b>, og så har den en <b>brun saddel</b>.
+</p>
+    
+    
+<!-- The grid: four columns -->
+<div class="row">
+  <div class="column">
+    <img src="pink1.jpg" alt="se den lige mand, så fin" onclick="myFunction(this);" width="150px">
+  </div>
+  <div class="column">
+    <img src="pink2.jpg" alt="den er sååå flot" onclick="myFunction(this);" width="150px">
+  </div>
+  <div class="column">
+    <img src="pink3.jpg" alt="fin cykel" onclick="myFunction(this);" width="150px">
+  </div>
+</div>
+
+<!-- The expanding image container -->
+<div class="container">
+  <!-- Close the image -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+  <!-- Expanded image -->
+  <img id="expandedImg" style="width:100%">
+
+  <!-- Image text -->
+  <div id="imgtext"></div>
+</div>
+
+
+</main>
+</body>
+</html>
+
+
